@@ -6,179 +6,201 @@
 <title>One Love Pet Salon — Website Rebuild Proposal · CreatAIv</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ct:#008687;--cc:#00A8A9;--cg:#D6A54D;--cd:#010204;--ch:#0A0F1A;--r:10px;--rl:18px;--rx:26px;--td:rgba(255,255,255,.55);--tm:rgba(255,255,255,.75);--bd:rgba(255,255,255,.08)}
+:root{
+  --ct:#008687;--cc:#00A8A9;--cg:#C8922A;--cglt:#D6A54D;
+  --bg:#F5F0E8;--bg2:#EDE6D8;--bg3:#E4DAC8;
+  --ink:#1A1208;--body:#3D3020;--muted:#6B5B42;--light:#9B8B72;
+  --bd:rgba(26,18,8,.1);--bds:rgba(26,18,8,.06);
+  --r:10px;--rl:18px;--rx:26px;
+}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--cd);color:#fff;line-height:1.65;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.15;letter-spacing:-.02em}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--body);line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;line-height:1.15;letter-spacing:-.02em;color:var(--ink)}
 a{color:inherit;text-decoration:none}.wrap{max-width:1100px;margin:0 auto;padding:0 40px}p{line-height:1.75}
 
-nav{background:rgba(1,2,4,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,168,169,.15);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
-.nav-logo{display:flex;align-items:center;gap:0}.nav-logo img{height:30px;width:auto}
-.nav-div{width:1px;height:26px;background:rgba(255,255,255,.1);margin:0 20px}
-.nav-client{font-family:'Space Grotesk',sans-serif;font-size:.8rem;font-weight:600;color:var(--td);letter-spacing:.03em}.nav-client span{color:var(--cc)}
-.nav-meta{font-family:'Orbitron',sans-serif;font-size:.58rem;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase}
+/* NAV */
+nav{background:#fff;border-bottom:2px solid var(--bg3);padding:0 44px;display:flex;align-items:center;justify-content:space-between;height:88px;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(26,18,8,.09)}
+.nav-logo{display:flex;align-items:center;gap:20px}
+.nav-logo img{height:58px;width:auto}
+.nav-div{width:1px;height:40px;background:var(--bd);margin:0 4px}
+.nav-client{font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:600;color:var(--body);letter-spacing:.02em}
+.nav-client span{color:var(--ct)}
+.nav-meta{font-family:'Orbitron',sans-serif;font-size:.62rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;font-weight:600}
 
-.hero{padding:100px 0 96px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(0,168,169,.07) 0%,transparent 65%);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:-150px;left:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(214,165,77,.04) 0%,transparent 65%);pointer-events:none}
+/* HERO */
+.hero{padding:96px 0 88px;position:relative;overflow:hidden;background:linear-gradient(160deg,#fff 0%,var(--bg) 100%)}
+.hero::before{content:'';position:absolute;top:-180px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,134,135,.06) 0%,transparent 65%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-120px;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(200,146,42,.05) 0%,transparent 65%);pointer-events:none}
 .hero-inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 40px}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(0,168,169,.3);background:rgba(0,168,169,.06);color:var(--cc);font-family:'Orbitron',sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:8px 16px;border-radius:6px;margin-bottom:32px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(0,134,135,.3);background:rgba(0,134,135,.06);color:var(--ct);font-family:'Orbitron',sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:8px 16px;border-radius:6px;margin-bottom:32px}
 .pulse{width:7px;height:7px;border-radius:50%;background:var(--cc);animation:p 2s infinite}
 @keyframes p{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
-.hero h1{font-size:clamp(2.8rem,5.5vw,4.4rem);font-weight:700;color:#fff;margin-bottom:24px;max-width:860px}
-.hero h1 em{font-style:italic;color:var(--cc)}
-.hero-sub{font-size:1.05rem;color:var(--tm);line-height:1.8;max-width:660px;margin-bottom:44px}
+.hero h1{font-size:clamp(2.6rem,5vw,4.2rem);font-weight:700;color:var(--ink);margin-bottom:24px;max-width:860px}
+.hero h1 em{font-style:italic;color:var(--ct)}
+.hero-sub{font-size:1.05rem;color:var(--body);line-height:1.8;max-width:660px;margin-bottom:44px}
 .chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:52px}
-.chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.6);font-size:.79rem;font-weight:500;padding:8px 16px;border-radius:50px}
+.chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--bd);color:var(--body);font-size:.79rem;font-weight:500;padding:8px 16px;border-radius:50px;box-shadow:0 1px 4px rgba(26,18,8,.05)}
 .chip-dot{width:5px;height:5px;border-radius:50%;background:var(--cg)}
-.hero-client{display:flex;align-items:center;gap:18px;padding-top:40px;border-top:1px solid rgba(255,255,255,.07)}
-.paw-badge{width:52px;height:52px;background:rgba(0,134,135,.12);border:1.5px solid rgba(0,168,169,.25);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.hct strong{color:#fff;font-size:.95rem;display:block;font-family:'Space Grotesk',sans-serif}
-.hct span{color:var(--td);font-size:.77rem}
+.hero-client{display:flex;align-items:center;gap:18px;padding-top:40px;border-top:1px solid var(--bd)}
+.paw-badge{width:52px;height:52px;background:rgba(0,134,135,.08);border:1.5px solid rgba(0,134,135,.2);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hct strong{color:var(--ink);font-size:.95rem;display:block;font-family:'Space Grotesk',sans-serif}
+.hct span{color:var(--muted);font-size:.77rem}
 
+/* SECTIONS */
 section{padding:88px 0}
-.lbl{display:inline-block;font-family:'Orbitron',sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cc);margin-bottom:14px}
-.lbl-g{color:var(--cg)}.lbl-r{color:#f87171}
-.sec-h{font-size:clamp(1.9rem,3.2vw,2.6rem);font-weight:700;color:#fff;margin-bottom:18px}
-.sec-p{font-size:1rem;color:var(--tm);line-height:1.78;max-width:660px}
+.lbl{display:inline-block;font-family:'Orbitron',sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ct);margin-bottom:14px}
+.lbl-g{color:var(--cg)}.lbl-r{color:var(--cg)}
+.sec-h{font-size:clamp(1.9rem,3.2vw,2.6rem);font-weight:700;color:var(--ink);margin-bottom:18px}
+.sec-p{font-size:1rem;color:var(--body);line-height:1.78;max-width:660px}
 
-.problem{background:rgba(255,255,255,.015);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+/* PROBLEM */
+.problem{background:var(--bg2);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
 .pg{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:52px}
-.pc p{font-size:.97rem;color:var(--tm);line-height:1.8;margin-bottom:16px}.pc p strong{color:#fff}
+.pc p{font-size:.97rem;color:var(--body);line-height:1.8;margin-bottom:16px}.pc p strong{color:var(--ink)}
 .pcards{display:flex;flex-direction:column;gap:14px}
-.pcard{background:rgba(248,113,113,.05);border:1px solid rgba(248,113,113,.18);border-radius:var(--rl);padding:20px 22px;display:flex;gap:14px;align-items:flex-start}
+.pcard{background:#fff;border:1px solid var(--bd);border-radius:var(--rl);padding:20px 22px;display:flex;gap:14px;align-items:flex-start;box-shadow:0 2px 8px rgba(26,18,8,.05)}
 .pcard-icon{font-size:1.3rem;flex-shrink:0;margin-top:2px}
-.pcard h4{font-size:.9rem;font-weight:700;color:#fca5a5;margin-bottom:5px;font-family:'Space Grotesk',sans-serif}
-.pcard p{font-size:.84rem;color:rgba(252,165,165,.65);line-height:1.65}
+.pcard h4{font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:5px;font-family:'Space Grotesk',sans-serif}
+.pcard p{font-size:.84rem;color:var(--muted);line-height:1.65}
 @media(max-width:860px){.pg{grid-template-columns:1fr}}
 
-.ir{background:linear-gradient(160deg,#0a0404 0%,#08100f 100%);border-top:1px solid rgba(248,113,113,.12);border-bottom:1px solid rgba(0,168,169,.12);padding:88px 0;position:relative;overflow:hidden}
+/* INVISIBLE REVIEWS — dark accent band */
+.ir{background:linear-gradient(160deg,#0d2530 0%,#08100f 100%);border-top:1px solid rgba(0,168,169,.15);border-bottom:1px solid rgba(0,168,169,.15);padding:88px 0;position:relative;overflow:hidden}
 .ir::before{content:'"';position:absolute;top:-60px;left:-20px;font-family:'Space Grotesk',sans-serif;font-size:28rem;color:rgba(255,255,255,.012);line-height:1;pointer-events:none;font-weight:700}
 .ir-inner{max-width:1100px;margin:0 auto;padding:0 40px;position:relative;z-index:1}
 .ir-g{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .ir-copy h2{font-size:clamp(2rem,3.5vw,3rem);color:#fff;margin-bottom:20px}
-.ir-copy h2 em{font-style:italic;color:#f87171}
-.ir-copy p{font-size:.97rem;color:var(--tm);line-height:1.8;margin-bottom:16px}.ir-copy p strong{color:#fff}
+.ir-copy h2 em{font-style:italic;color:var(--cglt)}
+.ir-copy p{font-size:.97rem;color:rgba(255,255,255,.72);line-height:1.8;margin-bottom:16px}.ir-copy p strong{color:#fff}
 .ir-stats{display:flex;gap:28px;margin-top:36px;padding-top:36px;border-top:1px solid rgba(255,255,255,.07);flex-wrap:wrap}
-.ir-stat strong{font-family:'Orbitron',sans-serif;font-size:2rem;color:var(--cc);display:block;line-height:1}
-.ir-stat span{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--td);margin-top:6px;display:block}
+.ir-stat strong{font-family:'Orbitron',sans-serif;font-size:2rem;color:var(--cglt);display:block;line-height:1}
+.ir-stat span{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:6px;display:block}
 .ir-vis{display:flex;flex-direction:column;gap:14px}
 .irc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--rl);padding:20px 22px}
 .irc-lbl{font-family:'Orbitron',sans-serif;font-size:.56rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
-.irc-lbl.bad{color:#f87171}.irc-lbl.good{color:#34d399}
-.irc-txt{font-size:.87rem;color:var(--tm);line-height:1.65}.irc-txt strong{color:#fff}
+.irc-lbl.bad{color:var(--cglt)}.irc-lbl.good{color:#34d399}
+.irc-txt{font-size:.87rem;color:rgba(255,255,255,.65);line-height:1.65}.irc-txt strong{color:#fff}
 .irc.ok{border-color:rgba(52,211,153,.18);background:rgba(52,211,153,.04)}
-.ir-arr{text-align:center;color:rgba(255,255,255,.14);font-size:1.1rem;margin:-2px 0}
-.ir-q{background:rgba(0,168,169,.06);border:1px solid rgba(0,168,169,.18);border-radius:var(--r);padding:18px 20px;font-size:.85rem;color:var(--tm);line-height:1.7}
-.ir-q strong{color:var(--cc);display:block;margin-bottom:6px;font-size:.65rem;font-family:'Orbitron',sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.ir-arr{text-align:center;color:rgba(255,255,255,.2);font-size:1.1rem;margin:-2px 0}
+.ir-q{background:rgba(200,146,42,.07);border:1px solid rgba(200,146,42,.22);border-radius:var(--r);padding:18px 20px;font-size:.85rem;color:rgba(255,255,255,.65);line-height:1.7}
+.ir-q strong{color:var(--cglt);display:block;margin-bottom:6px;font-size:.65rem;font-family:'Orbitron',sans-serif;letter-spacing:.1em;text-transform:uppercase}
 @media(max-width:860px){.ir-g{grid-template-columns:1fr}}
 
-.aeo{border-top:1px solid var(--bd)}
+/* AEO */
+.aeo{border-top:1px solid var(--bd);background:var(--bg)}
 .aeo-g{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:52px}
-.aeo-copy p{font-size:.97rem;color:var(--tm);line-height:1.8;margin-bottom:16px}.aeo-copy p strong{color:#fff}
+.aeo-copy p{font-size:.97rem;color:var(--body);line-height:1.8;margin-bottom:16px}.aeo-copy p strong{color:var(--ink)}
 .aeo-vis{display:flex;flex-direction:column;gap:12px}
-.aic{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09);border-radius:var(--rl);overflow:hidden}
-.aic-hdr{background:rgba(255,255,255,.04);padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,.06)}
-.aic-dots{display:flex;gap:5px}.aic-dots span{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.1)}
-.aic-lbl{font-family:'Orbitron',sans-serif;font-size:.56rem;color:rgba(255,255,255,.25);letter-spacing:.1em;text-transform:uppercase;margin-left:auto}
-.aib{padding:12px 16px;font-size:.85rem;line-height:1.6;border-bottom:1px solid rgba(255,255,255,.05)}
+.aic{background:#fff;border:1px solid var(--bd);border-radius:var(--rl);overflow:hidden;box-shadow:0 2px 12px rgba(26,18,8,.06)}
+.aic-hdr{background:var(--bg2);padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--bd)}
+.aic-dots{display:flex;gap:5px}.aic-dots span{width:9px;height:9px;border-radius:50%;background:var(--bd)}
+.aic-lbl{font-family:'Orbitron',sans-serif;font-size:.56rem;color:var(--light);letter-spacing:.1em;text-transform:uppercase;margin-left:auto}
+.aib{padding:12px 16px;font-size:.85rem;line-height:1.6;border-bottom:1px solid var(--bds);color:var(--body)}
 .aib:last-child{border-bottom:none}
-.aib.u{color:var(--cc)}.aib.u::before{content:'YOU  ';font-family:'Orbitron',sans-serif;font-size:.55rem;letter-spacing:.1em;color:rgba(0,168,169,.45);display:block;margin-bottom:4px}
-.aib.r{color:var(--tm)}.aib.r::before{content:'AI  ';font-family:'Orbitron',sans-serif;font-size:.55rem;letter-spacing:.1em;color:rgba(255,255,255,.2);display:block;margin-bottom:4px}
-.ai-miss{background:rgba(248,113,113,.05);border:1px solid rgba(248,113,113,.18);border-radius:var(--r);padding:14px 16px;font-size:.83rem;color:rgba(252,165,165,.8);display:flex;gap:10px;line-height:1.6}
-.ai-ok{background:rgba(52,211,153,.04);border:1px solid rgba(52,211,153,.18);border-radius:var(--r);padding:14px 16px;font-size:.83rem;color:rgba(110,231,183,.85);display:flex;gap:10px;line-height:1.6}
+.aib.u{color:var(--ct)}.aib.u::before{content:'YOU  ';font-family:'Orbitron',sans-serif;font-size:.55rem;letter-spacing:.1em;color:rgba(0,134,135,.5);display:block;margin-bottom:4px}
+.aib.r::before{content:'AI  ';font-family:'Orbitron',sans-serif;font-size:.55rem;letter-spacing:.1em;color:var(--light);display:block;margin-bottom:4px}
+.ai-miss{background:rgba(200,146,42,.06);border:1px solid rgba(200,146,42,.25);border-radius:var(--r);padding:14px 16px;font-size:.83rem;color:var(--body);display:flex;gap:10px;line-height:1.6}
+.ai-miss strong{color:var(--ink)}
+.ai-ok{background:rgba(0,134,135,.05);border:1px solid rgba(0,134,135,.2);border-radius:var(--r);padding:14px 16px;font-size:.83rem;color:var(--body);display:flex;gap:10px;line-height:1.6}
+.ai-ok strong{color:var(--ct)}
 @media(max-width:860px){.aeo-g{grid-template-columns:1fr}}
 
-.included{background:rgba(255,255,255,.015);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+/* INCLUDED */
+.included{background:var(--bg2);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
 .inc-g{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
-.inc-c{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--rl);padding:24px;transition:all .22s;cursor:default}
-.inc-c:hover{border-color:rgba(0,168,169,.35);background:rgba(0,168,169,.05);transform:translateY(-3px)}
+.inc-c{background:#fff;border:1px solid var(--bd);border-radius:var(--rl);padding:24px;transition:all .22s;cursor:default;box-shadow:0 1px 6px rgba(26,18,8,.04)}
+.inc-c:hover{border-color:rgba(0,134,135,.3);box-shadow:0 6px 24px rgba(0,134,135,.1);transform:translateY(-3px)}
 .inc-icon{font-size:1.5rem;margin-bottom:14px}
-.inc-c h3{font-size:.94rem;font-weight:700;color:#fff;margin-bottom:8px;font-family:'Space Grotesk',sans-serif}
-.inc-c p{font-size:.83rem;color:var(--td);line-height:1.65}
-.inc-tag{display:inline-block;margin-top:12px;background:rgba(0,168,169,.09);color:var(--cc);font-family:'Orbitron',sans-serif;font-size:.56rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:50px;border:1px solid rgba(0,168,169,.18)}
+.inc-c h3{font-size:.94rem;font-weight:700;color:var(--ink);margin-bottom:8px;font-family:'Space Grotesk',sans-serif}
+.inc-c p{font-size:.83rem;color:var(--muted);line-height:1.65}
+.inc-tag{display:inline-block;margin-top:12px;background:rgba(0,134,135,.07);color:var(--ct);font-family:'Orbitron',sans-serif;font-size:.56rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:50px;border:1px solid rgba(0,134,135,.18)}
 @media(max-width:860px){.inc-g{grid-template-columns:1fr 1fr}}
 @media(max-width:580px){.inc-g{grid-template-columns:1fr}}
 
-.pricing{border-top:1px solid var(--bd)}
+/* MOCKUPS */
+.mockups{background:var(--bg);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+.mk-g{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+.mk-c{background:#fff;border:1px solid var(--bd);border-radius:var(--rx);overflow:hidden;transition:all .25s;box-shadow:0 2px 12px rgba(26,18,8,.06)}
+.mk-c:hover{transform:translateY(-5px);border-color:rgba(0,134,135,.3);box-shadow:0 16px 48px rgba(0,134,135,.12)}
+.mk-prev{height:240px;position:relative;overflow:hidden;background:var(--bg3)}
+.mk-prev iframe{width:200%;height:200%;transform:scale(0.5);transform-origin:top left;pointer-events:none;border:none}
+.mk-ov{position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(245,240,232,.7))}
+.mk-body{padding:20px 22px}
+.mk-num{font-family:'Orbitron',sans-serif;font-size:.56rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--cg);margin-bottom:6px}
+.mk-c h3{font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:8px;font-family:'Space Grotesk',sans-serif}
+.mk-c p{font-size:.83rem;color:var(--muted);line-height:1.6;margin-bottom:16px}
+.mk-pal{display:flex;gap:6px;margin-bottom:16px}
+.sw{width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(26,18,8,.1)}
+.mk-link{display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(0,134,135,.08);border:1px solid rgba(0,134,135,.22);color:var(--ct);font-size:.83rem;font-weight:600;padding:11px;border-radius:var(--r);text-decoration:none;transition:all .2s;font-family:'Space Grotesk',sans-serif}
+.mk-link:hover{background:rgba(0,134,135,.15)}
+@media(max-width:860px){.mk-g{grid-template-columns:1fr}}
+
+/* WHY */
+.why{border-top:1px solid var(--bd);background:var(--bg2)}
+.why-g{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.why-copy p{font-size:.97rem;color:var(--body);line-height:1.8;margin-bottom:16px}.why-copy p strong{color:var(--ink)}
+.why-q{background:#fff;border-left:3px solid var(--ct);border-radius:0 var(--r) var(--r) 0;padding:20px 22px;margin-top:28px;box-shadow:0 2px 8px rgba(26,18,8,.05)}
+.why-q p{font-size:.96rem;color:var(--body);line-height:1.75;font-style:italic;margin:0}
+.why-q cite{display:block;font-family:'Orbitron',sans-serif;font-size:.58rem;font-weight:600;letter-spacing:.1em;color:var(--ct);margin-top:10px;font-style:normal;text-transform:uppercase}
+.why-stats{display:flex;flex-direction:column;gap:14px}
+.ws{background:#fff;border:1px solid var(--bd);border-radius:var(--rl);padding:20px 22px;display:flex;gap:14px;align-items:flex-start;box-shadow:0 1px 6px rgba(26,18,8,.04)}
+.ws.bad{border-color:rgba(200,146,42,.25);background:rgba(200,146,42,.04)}
+.ws.good{border-color:rgba(0,134,135,.2);background:rgba(0,134,135,.04)}
+.ws-icon{font-size:1.4rem;flex-shrink:0}
+.ws h4{font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:4px;font-family:'Space Grotesk',sans-serif}
+.ws.bad h4{color:var(--cg)}.ws.good h4{color:var(--ct)}
+.ws p{font-size:.82rem;color:var(--muted);line-height:1.6}
+@media(max-width:860px){.why-g{grid-template-columns:1fr}}
+
+/* PRICING */
+.pricing{border-top:1px solid var(--bd);background:var(--bg)}
 .pr-g{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;margin-top:52px;align-items:start}
-.pr-main{background:rgba(255,255,255,.03);border:1px solid rgba(0,168,169,.22);border-radius:var(--rx);padding:36px;position:relative;overflow:hidden}
-.pr-main::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--ct),var(--cc),var(--cg))}
-.pr-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,168,169,.1);border:1px solid rgba(0,168,169,.25);color:var(--cc);font-family:'Orbitron',sans-serif;font-size:.56rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:50px;margin-bottom:18px}
-.pr-main h3{font-size:1.4rem;color:#fff;margin-bottom:8px}
-.pr-amt{font-family:'Orbitron',sans-serif;font-size:3rem;font-weight:700;color:#fff;line-height:1;margin-bottom:6px}
-.pr-amt span{font-size:.95rem;font-weight:400;color:var(--td);font-family:'Inter',sans-serif;margin-left:4px}
-.pr-sub{font-size:.83rem;color:var(--td);margin-bottom:28px}
+.pr-main{background:#fff;border:1.5px solid rgba(0,134,135,.3);border-radius:var(--rx);padding:36px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(0,134,135,.1)}
+.pr-main::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--ct),var(--cc),var(--cg))}
+.pr-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,134,135,.08);border:1px solid rgba(0,134,135,.22);color:var(--ct);font-family:'Orbitron',sans-serif;font-size:.56rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:50px;margin-bottom:18px}
+.pr-main h3{font-size:1.4rem;color:var(--ink);margin-bottom:8px}
+.pr-amt{font-family:'Orbitron',sans-serif;font-size:3rem;font-weight:700;color:var(--ink);line-height:1;margin-bottom:6px}
+.pr-amt span{font-size:.95rem;font-weight:400;color:var(--muted);font-family:'Inter',sans-serif;margin-left:4px}
+.pr-sub{font-size:.83rem;color:var(--muted);margin-bottom:28px}
 .pr-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
-.pr-list li{display:flex;align-items:flex-start;gap:10px;font-size:.87rem;color:var(--tm)}
-.pr-list li::before{content:'✓';color:var(--cc);font-weight:700;flex-shrink:0;margin-top:1px}
+.pr-list li{display:flex;align-items:flex-start;gap:10px;font-size:.87rem;color:var(--body)}
+.pr-list li::before{content:'✓';color:var(--ct);font-weight:700;flex-shrink:0;margin-top:1px}
 .pr-cta{display:inline-flex;align-items:center;gap:8px;background:var(--ct);color:#fff;font-size:.87rem;font-weight:600;padding:13px 24px;border-radius:var(--r);transition:background .2s}
 .pr-cta:hover{background:var(--cc)}
 .pr-side{display:flex;flex-direction:column;gap:16px}
-.pr-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--rl);padding:22px}
-.pr-card h4{font-size:1rem;color:#fff;margin-bottom:6px;font-family:'Space Grotesk',sans-serif}
-.pr-card .amt{font-family:'Orbitron',sans-serif;font-size:1.7rem;color:#fff;line-height:1;margin-bottom:4px}
-.pr-card .amt span{font-size:.78rem;color:var(--td);font-family:'Inter',sans-serif}
-.pr-card p{font-size:.82rem;color:var(--td);line-height:1.6}
-.pr-card.hi{border-color:rgba(0,168,169,.28);background:rgba(0,168,169,.06)}.pr-card.hi h4{color:var(--cc)}
-.pr-add{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:var(--rl);padding:22px}
-.pr-add-lbl{font-family:'Orbitron',sans-serif;font-size:.56rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:16px}
-.add-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.pr-card{background:#fff;border:1px solid var(--bd);border-radius:var(--rl);padding:22px;box-shadow:0 1px 6px rgba(26,18,8,.04)}
+.pr-card h4{font-size:1rem;color:var(--ink);margin-bottom:6px;font-family:'Space Grotesk',sans-serif}
+.pr-card .amt{font-family:'Orbitron',sans-serif;font-size:1.7rem;color:var(--ink);line-height:1;margin-bottom:4px}
+.pr-card .amt span{font-size:.78rem;color:var(--muted);font-family:'Inter',sans-serif}
+.pr-card p{font-size:.82rem;color:var(--muted);line-height:1.6}
+.pr-card.hi{border-color:rgba(0,134,135,.28);background:rgba(0,134,135,.04)}.pr-card.hi h4{color:var(--ct)}
+.pr-add{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);padding:22px}
+.pr-add-lbl{font-family:'Orbitron',sans-serif;font-size:.56rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--light);margin-bottom:16px}
+.add-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--bds)}
 .add-row:last-child{border-bottom:none}
-.add-name{font-size:.87rem;color:var(--tm)}.add-name span{display:block;font-size:.75rem;color:var(--td);margin-top:2px}
+.add-name{font-size:.87rem;color:var(--body)}.add-name span{display:block;font-size:.75rem;color:var(--muted);margin-top:2px}
 .add-price{font-family:'Orbitron',sans-serif;font-size:.95rem;color:var(--cg);white-space:nowrap}
-.pr-note{margin-top:16px;background:rgba(214,165,77,.05);border:1px solid rgba(214,165,77,.18);border-radius:var(--r);padding:16px 20px;font-size:.83rem;color:rgba(214,165,77,.7);line-height:1.65}
+.pr-note{margin-top:16px;background:rgba(200,146,42,.06);border:1px solid rgba(200,146,42,.2);border-radius:var(--r);padding:16px 20px;font-size:.83rem;color:var(--body);line-height:1.65}
 .pr-note strong{color:var(--cg)}
 @media(max-width:860px){.pr-g{grid-template-columns:1fr}}
 
-.mockups{background:rgba(255,255,255,.015);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
-.mk-g{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
-.mk-c{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--rx);overflow:hidden;transition:all .25s}
-.mk-c:hover{transform:translateY(-5px);border-color:rgba(0,168,169,.35);box-shadow:0 16px 48px rgba(0,168,169,.15)}
-.mk-prev{height:240px;position:relative;overflow:hidden;background:#0a0a0a}
-.mk-prev iframe{width:200%;height:200%;transform:scale(0.5);transform-origin:top left;pointer-events:none;border:none}
-.mk-ov{position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(1,2,4,.8))}
-.mk-body{padding:20px 22px}
-.mk-num{font-family:'Orbitron',sans-serif;font-size:.56rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--cg);margin-bottom:6px}
-.mk-c h3{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:8px;font-family:'Space Grotesk',sans-serif}
-.mk-c p{font-size:.83rem;color:var(--td);line-height:1.6;margin-bottom:16px}
-.mk-pal{display:flex;gap:6px;margin-bottom:16px}
-.sw{width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(255,255,255,.12)}
-.mk-link{display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(0,168,169,.1);border:1px solid rgba(0,168,169,.25);color:var(--cc);font-size:.83rem;font-weight:600;padding:11px;border-radius:var(--r);text-decoration:none;transition:all .2s;font-family:'Space Grotesk',sans-serif}
-.mk-link:hover{background:rgba(0,168,169,.18)}
-@media(max-width:860px){.mk-g{grid-template-columns:1fr}}
-
-.why{border-top:1px solid var(--bd)}
-.why-g{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.why-copy p{font-size:.97rem;color:var(--tm);line-height:1.8;margin-bottom:16px}.why-copy p strong{color:#fff}
-.why-q{background:rgba(0,168,169,.05);border-left:3px solid var(--cc);border-radius:0 var(--r) var(--r) 0;padding:20px 22px;margin-top:28px}
-.why-q p{font-size:.96rem;color:var(--tm);line-height:1.75;font-style:italic;margin:0}
-.why-q cite{display:block;font-family:'Orbitron',sans-serif;font-size:.58rem;font-weight:600;letter-spacing:.1em;color:var(--cc);margin-top:10px;font-style:normal;text-transform:uppercase}
-.why-stats{display:flex;flex-direction:column;gap:14px}
-.ws{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--rl);padding:20px 22px;display:flex;gap:14px;align-items:flex-start}
-.ws.bad{border-color:rgba(248,113,113,.18);background:rgba(248,113,113,.04)}
-.ws.good{border-color:rgba(0,168,169,.18);background:rgba(0,168,169,.04)}
-.ws-icon{font-size:1.4rem;flex-shrink:0}
-.ws h4{font-size:.88rem;font-weight:700;color:#fff;margin-bottom:4px;font-family:'Space Grotesk',sans-serif}
-.ws.bad h4{color:#fca5a5}.ws.good h4{color:var(--cc)}
-.ws p{font-size:.82rem;color:var(--td);line-height:1.6}
-@media(max-width:860px){.why-g{grid-template-columns:1fr}}
-
-.ns{background:linear-gradient(160deg,rgba(0,134,135,.1) 0%,rgba(1,2,4,1) 60%);border-top:1px solid rgba(0,168,169,.18);padding:88px 0}
+/* NEXT STEPS */
+.ns{background:linear-gradient(160deg,rgba(0,134,135,.08) 0%,var(--bg) 60%);border-top:1px solid rgba(0,134,135,.15);padding:88px 0}
 .ns-g{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.ns-copy h2{font-size:clamp(2rem,3.5vw,2.8rem);color:#fff;margin-bottom:16px}
-.ns-copy p{font-size:1rem;color:var(--tm);line-height:1.8;margin-bottom:28px}
+.ns-copy h2{font-size:clamp(2rem,3.5vw,2.8rem);color:var(--ink);margin-bottom:16px}
+.ns-copy p{font-size:1rem;color:var(--body);line-height:1.8;margin-bottom:28px}
 .ns-steps{display:flex;flex-direction:column;gap:14px}
-.nss{display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--rl);padding:18px 20px}
-.nss-n{width:34px;height:34px;border-radius:50%;background:rgba(0,168,169,.12);border:1px solid rgba(0,168,169,.28);color:var(--cc);display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-weight:700;font-size:.72rem;flex-shrink:0}
-.nss h4{font-size:.9rem;font-weight:700;color:#fff;margin-bottom:4px;font-family:'Space Grotesk',sans-serif}
-.nss p{font-size:.82rem;color:var(--td);line-height:1.6}
+.nss{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--bd);border-radius:var(--rl);padding:18px 20px;box-shadow:0 1px 6px rgba(26,18,8,.04)}
+.nss-n{width:34px;height:34px;border-radius:50%;background:rgba(0,134,135,.1);border:1px solid rgba(0,134,135,.25);color:var(--ct);display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-weight:700;font-size:.72rem;flex-shrink:0}
+.nss h4{font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:4px;font-family:'Space Grotesk',sans-serif}
+.nss p{font-size:.82rem;color:var(--muted);line-height:1.6}
 @media(max-width:860px){.ns-g{grid-template-columns:1fr}}
 
-footer{background:#000;border-top:1px solid rgba(255,255,255,.05);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.ft-logo img{height:26px;width:auto;opacity:.65}
-.ft-txt{font-size:.75rem;color:rgba(255,255,255,.22);line-height:1.6;text-align:center}.ft-txt strong{color:rgba(255,255,255,.38)}
-.ft-r{font-family:'Orbitron',sans-serif;font-size:.55rem;color:rgba(255,255,255,.18);letter-spacing:.1em;text-transform:uppercase;text-align:right}
+/* FOOTER */
+footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:28px 44px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.ft-logo img{height:36px;width:auto;opacity:.8}
+.ft-txt{font-size:.75rem;color:rgba(255,255,255,.35);line-height:1.6;text-align:center}.ft-txt strong{color:rgba(255,255,255,.55)}
+.ft-r{font-family:'Orbitron',sans-serif;font-size:.55rem;color:rgba(255,255,255,.2);letter-spacing:.1em;text-transform:uppercase;text-align:right}
 </style>
 </head>
 <body>
@@ -196,21 +218,21 @@ footer{background:#000;border-top:1px solid rgba(255,255,255,.05);padding:28px 4
   <div class="hero-inner">
     <div class="eyebrow"><span class="pulse"></span>Website Rebuild Proposal</div>
     <h1>One Love Pet Salon Has Earned an <em>Extraordinary</em> Reputation.<br>The Website Doesn't Know That.</h1>
-    <p class="hero-sub">75+ five-star reviews. 13 years in business. Six experienced stylists. Loyal customers who've been coming for a decade. And a website that looks like it was built in 2014 on a GoDaddy template — because it was. This proposal is about closing that gap.</p>
+    <p class="hero-sub">75+ five-star reviews. 13 years in business. Loyal customers who've been coming for a decade. And a website that looks like it was built in 2014 on a GoDaddy template — because it was. This proposal is about closing that gap.</p>
     <div class="chips">
       <div class="chip"><span class="chip-dot"></span>75+ Five-Star Reviews</div>
       <div class="chip"><span class="chip-dot"></span>Family-Owned Since 2013</div>
       <div class="chip"><span class="chip-dot"></span>SW Las Vegas · Tropicana &amp; Hualapai</div>
-      <div class="chip"><span class="chip-dot"></span>6 Experienced Stylists</div>
+      <div class="chip"><span class="chip-dot"></span>Experienced Stylists</div>
     </div>
     <div class="hero-client">
       <div class="paw-badge">
         <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="50" cy="63" rx="22" ry="19" fill="#00A8A9" opacity=".9"/>
-          <ellipse cx="27" cy="48" rx="10" ry="13" fill="#00A8A9" opacity=".7"/>
-          <ellipse cx="73" cy="48" rx="10" ry="13" fill="#00A8A9" opacity=".7"/>
-          <ellipse cx="37" cy="31" rx="8" ry="10" fill="#00A8A9" opacity=".5"/>
-          <ellipse cx="63" cy="31" rx="8" ry="10" fill="#00A8A9" opacity=".5"/>
+          <ellipse cx="50" cy="63" rx="22" ry="19" fill="#008687" opacity=".9"/>
+          <ellipse cx="27" cy="48" rx="10" ry="13" fill="#008687" opacity=".7"/>
+          <ellipse cx="73" cy="48" rx="10" ry="13" fill="#008687" opacity=".7"/>
+          <ellipse cx="37" cy="31" rx="8" ry="10" fill="#008687" opacity=".5"/>
+          <ellipse cx="63" cy="31" rx="8" ry="10" fill="#008687" opacity=".5"/>
         </svg>
       </div>
       <div class="hct">
@@ -247,7 +269,7 @@ footer{background:#000;border-top:1px solid rgba(255,255,255,.05);padding:28px 4
   <div class="ir-inner">
     <div class="ir-g">
       <div class="ir-copy">
-        <span class="lbl lbl-r">The Hidden Cost</span>
+        <span class="lbl" style="color:var(--cglt)">The Hidden Cost</span>
         <h2>75 Five-Star Reviews That Are <em>Working for Nobody</em></h2>
         <p>This is the most important thing in this proposal, so read it carefully: <strong>One Love Pet Salon has 75+ five-star reviews across Google, Yelp, and Nextdoor.</strong> That is an extraordinary asset for a local service business. Most competitors would pay thousands of dollars to have it.</p>
         <p>But right now, those reviews are doing almost nothing for the business. They sit on third-party platforms, completely disconnected from the website. A prospective customer who lands on the current homepage — which is most of them, because Google sends people to the website first — <strong>sees none of it.</strong> They see a flat template with no photos, no staff, no story, and no social proof. They leave.</p>
@@ -307,49 +329,9 @@ footer{background:#000;border-top:1px solid rgba(255,255,255,.05);padding:28px 4
       <div class="inc-c"><div class="inc-icon">🖼️</div><h3>Before &amp; After Gallery + Staff Upload</h3><p>Grooming is visual. Includes a simple upload area so the team can add new photos themselves — no developer needed. The gallery stays fresh because the groomers can post their own work.</p><span class="inc-tag">Trust Builder</span></div>
       <div class="inc-c"><div class="inc-icon">👥</div><h3>Meet the Groomers Page</h3><p>Warm bios, photos, specialties, and a personal quote per stylist. This is what converts a nervous new pet parent — they want to know who's handling their dog.</p><span class="inc-tag">Trust Builder</span></div>
       <div class="inc-c"><div class="inc-icon">✂️</div><h3>Services Page with Clear Explanations</h3><p>Full groom, bath &amp; brush, puppy's first groom, senior/anxious care, doodle coats, deshedding, dematting, and add-ons — each explained in plain language.</p><span class="inc-tag">Conversion</span></div>
-      <div class="inc-c"><div class="inc-icon">⭐</div><h3>Reviews Surfaced on the Homepage</h3><p>The 75+ five-star reviews are an asset currently buried on third-party sites. Bringing them onto the homepage does the persuading automatically.</p><span class="inc-tag">Critical</span></div>
+      <div class="inc-c"><div class="inc-icon">⭐</div><h3>Reviews Surfaced on the Homepage</h3><p>The 75+ five-star reviews that currently sit buried on Yelp and Google — front and center where every new visitor sees them within the first scroll.</p><span class="inc-tag">Social Proof</span></div>
       <div class="inc-c"><div class="inc-icon">🗺️</div><h3>Location, Hours &amp; Google Map Embed</h3><p>Built for mobile and local search, with service-area language covering SW Las Vegas, Summerlin, Spring Valley, and Henderson.</p><span class="inc-tag">Local SEO</span></div>
       <div class="inc-c"><div class="inc-icon">🔍</div><h3>Local SEO Foundation + Schema Markup</h3><p>LocalBusiness and service schema, proper titles and meta descriptions, image alt text, and location targeting so the site competes for the searches that bring in new clients.</p><span class="inc-tag">Get Found</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="pricing">
-  <div class="wrap">
-    <span class="lbl lbl-g">Investment</span>
-    <h2 class="sec-h">Transparent, Flat-Rate Pricing</h2>
-    <p class="sec-p">No hourly billing, no scope creep surprises. One price for the build, one monthly rate to keep it healthy and growing.</p>
-    <div class="pr-g">
-      <div class="pr-main">
-        <span class="pr-badge">✦ Recommended</span>
-        <h3>Website Rebuild</h3>
-        <div class="pr-amt">$3,750<span>one-time</span></div>
-        <div class="pr-sub">6–8 pages · Mobile-first · Complete build · Launch support</div>
-        <ul class="pr-list">
-          <li>Modern, mobile-first responsive design (3 style directions to choose from)</li>
-          <li>Sticky call &amp; text buttons on every page</li>
-          <li>Appointment request form with email notification</li>
-          <li>Before-and-after gallery with staff self-upload area</li>
-          <li>Meet the Groomers page with bios, photos &amp; specialties</li>
-          <li>Full services page with explanations and pricing notes</li>
-          <li>Reviews surfaced on homepage and service pages</li>
-          <li>Location page with Google Map embed and hours</li>
-          <li>Local SEO foundation + LocalBusiness schema markup</li>
-          <li>Google Analytics + Search Console setup</li>
-          <li>Launch support and handoff walkthrough</li>
-        </ul>
-        <a href="#mockups" class="pr-cta">View Design Options ↓</a>
-      </div>
-      <div class="pr-side">
-        <div class="pr-card hi"><h4>Standard Care Plan</h4><div class="amt">$250<span>/month</span></div><p>Hosting support, small content and image updates, backups, uptime monitoring, and basic troubleshooting. Keeps the site healthy and current without any developer calls.</p></div>
-        <div class="pr-card"><h4>Growth Care Plan</h4><div class="amt">$350<span>/month</span></div><p>Everything in Standard, plus twice-monthly blog posting and ongoing SEO/AEO monitoring and updates. The ongoing engine for climbing in both Google and AI search results.</p></div>
-        <div class="pr-add">
-          <div class="pr-add-lbl">Optional Add-Ons</div>
-          <div class="add-row"><div class="add-name">Automated Blog + Content Machine<span>Twice-monthly posts, auto-researched &amp; published</span></div><div class="add-price">$750</div></div>
-          <div class="add-row"><div class="add-name">SEO + AEO Optimization Pass<span>Schema, keywords, Google Business, AI answer-engine targeting</span></div><div class="add-price">$900</div></div>
-        </div>
-        <div class="pr-note"><strong>Why this number?</strong> A professional 6–8 page local service site in Las Vegas with custom design, gallery, forms, and local SEO typically runs $3,000–$5,500. At $3,750, this is priced to deliver real quality without looking like agency overreach to a family-owned business.</div>
-      </div>
     </div>
   </div>
 </section>
@@ -408,8 +390,48 @@ footer{background:#000;border-top:1px solid rgba(255,255,255,.05);padding:28px 4
       <div class="why-stats">
         <div class="ws bad"><div class="ws-icon">📉</div><div><h4>Every Bounce Is a Lost Customer</h4><p>A prospective customer who lands on the current homepage and leaves is a customer who would have stayed if they'd seen the reviews, the gallery, and the staff.</p></div></div>
         <div class="ws bad"><div class="ws-icon">🤖</div><div><h4>AI Search Is Already Happening</h4><p>Las Vegas pet owners are asking ChatGPT and Gemini for local groomer recommendations right now. Without structured web content, One Love won't appear in those answers — regardless of how many five-star reviews it has.</p></div></div>
-        <div class="ws good"><div class="ws-icon">🚀</div><div><h4>The Foundation Is Already There</h4><p>75+ genuine five-star reviews. 13 years of loyal customers. Six experienced stylists. A warm, family-owned story. The rebuild's job is simply to make all of that visible — and easy to act on.</p></div></div>
+        <div class="ws good"><div class="ws-icon">🚀</div><div><h4>The Foundation Is Already There</h4><p>75+ genuine five-star reviews. 13 years of loyal customers. A warm, family-owned story. The rebuild's job is simply to make all of that visible — and easy to act on.</p></div></div>
         <div class="ws good"><div class="ws-icon">🏆</div><div><h4>Can't Be Out-Warmed by a Chain</h4><p>PetSmart and Banfield can out-spend on marketing. They can't out-warm a family-owned salon with a decade of loyal customers and real staff who know your dog's name.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="wrap">
+    <span class="lbl lbl-g">Investment</span>
+    <h2 class="sec-h">Transparent, Flat-Rate Pricing</h2>
+    <p class="sec-p">No hourly billing, no scope creep surprises. One price for the build, one monthly rate to keep it healthy and growing.</p>
+    <div class="pr-g">
+      <div class="pr-main">
+        <span class="pr-badge">✦ Recommended</span>
+        <h3>Website Rebuild</h3>
+        <div class="pr-amt">$3,750<span>one-time</span></div>
+        <div class="pr-sub">6–8 pages · Mobile-first · Complete build · Launch support</div>
+        <ul class="pr-list">
+          <li>Modern, mobile-first responsive design (3 style directions to choose from)</li>
+          <li>Sticky call &amp; text buttons on every page</li>
+          <li>Appointment request form with email notification</li>
+          <li>Before-and-after gallery with staff self-upload area</li>
+          <li>Meet the Groomers page with bios, photos &amp; specialties</li>
+          <li>Full services page with explanations and pricing notes</li>
+          <li>Reviews surfaced on homepage and service pages</li>
+          <li>Location page with Google Map embed and hours</li>
+          <li>Local SEO foundation + LocalBusiness schema markup</li>
+          <li>Google Analytics + Search Console setup</li>
+          <li>Launch support and handoff walkthrough</li>
+        </ul>
+        <a href="#mockups" class="pr-cta">View Design Options ↑</a>
+      </div>
+      <div class="pr-side">
+        <div class="pr-card hi"><h4>Standard Care Plan</h4><div class="amt">$250<span>/month</span></div><p>Hosting support, small content and image updates, backups, uptime monitoring, and basic troubleshooting. Keeps the site healthy and current without any developer calls.</p></div>
+        <div class="pr-card"><h4>Growth Care Plan</h4><div class="amt">$350<span>/month</span></div><p>Everything in Standard, plus twice-monthly blog posting and ongoing SEO/AEO monitoring and updates. The ongoing engine for climbing in both Google and AI search results.</p></div>
+        <div class="pr-add">
+          <div class="pr-add-lbl">Optional Add-Ons</div>
+          <div class="add-row"><div class="add-name">Automated Blog + Content Machine<span>Twice-monthly posts, auto-researched &amp; published</span></div><div class="add-price">$750</div></div>
+          <div class="add-row"><div class="add-name">SEO + AEO Optimization Pass<span>Schema, keywords, Google Business, AI answer-engine targeting</span></div><div class="add-price">$900</div></div>
+        </div>
+        <div class="pr-note"><strong>Why this number?</strong> A professional 6–8 page local service site in Las Vegas with custom design, gallery, forms, and local SEO typically runs $3,000–$5,500. At $3,750, this is priced to deliver real quality without looking like agency overreach to a family-owned business.</div>
       </div>
     </div>
   </div>
