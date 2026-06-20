@@ -28,20 +28,20 @@ nav{background:#0a0e14;border-bottom:2px solid rgba(0,168,169,.25);padding:0 44p
 .nav-meta{font-family:'Orbitron',sans-serif;font-size:.62rem;color:rgba(255,255,255,.4);letter-spacing:.12em;text-transform:uppercase;font-weight:600}
 
 /* HERO */
-.hero{padding:96px 0 88px;position:relative;overflow:hidden;background:linear-gradient(160deg,#fff 0%,var(--bg) 100%)}
-.hero::before{content:'';position:absolute;top:-180px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,134,135,.06) 0%,transparent 65%);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:-120px;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(200,146,42,.05) 0%,transparent 65%);pointer-events:none}
+.hero{padding:96px 0 88px;position:relative;overflow:hidden;background:url('hero-dogs.jpg') center center/cover no-repeat;min-height:600px}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(245,240,232,.92) 0%,rgba(237,230,216,.88) 40%,rgba(200,146,42,.12) 70%,rgba(0,134,135,.18) 100%);pointer-events:none;z-index:0}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(245,240,232,.0) 50%,rgba(245,240,232,.55) 100%);pointer-events:none;z-index:0}
 .hero-inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 40px}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(0,134,135,.3);background:rgba(0,134,135,.06);color:var(--ct);font-family:'Orbitron',sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:8px 16px;border-radius:6px;margin-bottom:32px}
 .pulse{width:7px;height:7px;border-radius:50%;background:var(--cc);animation:p 2s infinite}
 @keyframes p{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
-.hero h1{font-size:clamp(2.6rem,5vw,4.2rem);font-weight:700;color:var(--ink);margin-bottom:24px;max-width:860px}
+.hero h1{font-size:clamp(2.6rem,5vw,4.2rem);font-weight:700;color:var(--ink);margin-bottom:24px;max-width:860px;text-shadow:0 1px 3px rgba(245,240,232,.4)}
 .hero h1 em{font-style:italic;color:var(--ct)}
 .hero-sub{font-size:1.05rem;color:var(--body);line-height:1.8;max-width:660px;margin-bottom:44px}
 .chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:52px}
 .chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--bd);color:var(--body);font-size:.79rem;font-weight:500;padding:8px 16px;border-radius:50px;box-shadow:0 1px 4px rgba(26,18,8,.05)}
 .chip-dot{width:5px;height:5px;border-radius:50%;background:var(--cg)}
-.hero-client{display:flex;align-items:center;gap:18px;padding-top:40px;border-top:1px solid var(--bd)}
+.hero-client{display:flex;align-items:center;gap:18px;padding-top:40px;border-top:1px solid rgba(26,18,8,.15)}
 .paw-badge{width:52px;height:52px;background:rgba(0,134,135,.08);border:1.5px solid rgba(0,134,135,.2);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .hct strong{color:var(--ink);font-size:.95rem;display:block;font-family:'Space Grotesk',sans-serif}
 .hct span{color:var(--muted);font-size:.77rem}
